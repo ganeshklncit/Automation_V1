@@ -37,6 +37,10 @@
                 <p>
                     <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
                 </p>
+                <p>
+                   <a class="btn btn-default" href="createclient.aspx">Create Client</a></p>
+                <p>
+                    &nbsp;</p>
             </section>
         </div>
     </main>
