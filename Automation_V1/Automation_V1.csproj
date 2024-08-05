@@ -100,6 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AgreeContract6.aspx" />
+    <Content Include="AgreeContract5.aspx" />
+    <Content Include="AgreeContract4.aspx" />
+    <Content Include="AgreeContract3.aspx" />
+    <Content Include="AgreeContract2.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -118,6 +123,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="AgreeContract1.aspx" />
     <Content Include="createclient.aspx" />
     <Content Include="CreateContract.aspx" />
     <Content Include="Default.aspx" />
@@ -194,6 +200,41 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgreeContract6.aspx.cs">
+      <DependentUpon>AgreeContract6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgreeContract6.aspx.designer.cs">
+      <DependentUpon>AgreeContract6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgreeContract5.aspx.cs">
+      <DependentUpon>AgreeContract5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgreeContract5.aspx.designer.cs">
+      <DependentUpon>AgreeContract5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgreeContract4.aspx.cs">
+      <DependentUpon>AgreeContract4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgreeContract4.aspx.designer.cs">
+      <DependentUpon>AgreeContract4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgreeContract3.aspx.cs">
+      <DependentUpon>AgreeContract3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgreeContract3.aspx.designer.cs">
+      <DependentUpon>AgreeContract3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgreeContract2.aspx.cs">
+      <DependentUpon>AgreeContract2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgreeContract2.aspx.designer.cs">
+      <DependentUpon>AgreeContract2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -211,6 +252,13 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Content Include="Database\Query.sql" />
+    <Compile Include="AgreeContract1.aspx.cs">
+      <DependentUpon>AgreeContract1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgreeContract1.aspx.designer.cs">
+      <DependentUpon>AgreeContract1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="createclient.aspx.cs">
       <DependentUpon>createclient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
