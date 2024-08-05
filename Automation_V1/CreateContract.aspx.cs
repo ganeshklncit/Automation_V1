@@ -41,7 +41,7 @@ namespace Automation_V1
             string getscalar = gen.scalar_result("select max(contractid) from tblcontract");
             int max = gen.checkmax(getscalar);
 
-            string str = "insert into tblcontract values (" + max + ",'" + txtContactName.Text + "','" + txtemail.Text + "','" + txtAmount.Text + "','0','0','1')";
+            string str = "insert into tblcontract values (" + max + ",'" + txtContactName.Text + "','" + txtemail.Text + "','" + txtAmount.Text + "','0','0','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','1')";
             int result = gen.insert_value(str);
 
             if(chkcontract1.Checked)
@@ -75,7 +75,7 @@ namespace Automation_V1
         {
             string getscalar = gen.scalar_result("select max(contractdetailsid) from tblcontractdetails");
             int max = gen.checkmax(getscalar);
-            string str = "insert into tblcontractdetails values (" + max + ","+ contractid +",'" + contract + "','1')";
+            string str = "insert into tblcontractdetails values (" + max + ","+ contractid +",'" + contract + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','1')";
             int result = gen.insert_value(str);
 
         }
