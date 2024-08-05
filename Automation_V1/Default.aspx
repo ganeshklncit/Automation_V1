@@ -39,8 +39,9 @@
                 </p>
                 <p>
                    <a class="btn btn-default" href="createclient.aspx">Create Client</a></p>
+
                 <p>
-                    &nbsp;</p>
+                    <a class="btn btn-default" href="createContract.aspx">Create Contract</a></p></p>
             </section>
         </div>
     </main>
