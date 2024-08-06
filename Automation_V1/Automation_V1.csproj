@@ -100,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="DocumnetUpload.aspx" />
+    <Content Include="VideoValidation.aspx" />
     <Content Include="AgreeContract6.aspx" />
     <Content Include="AgreeContract5.aspx" />
     <Content Include="AgreeContract4.aspx" />
@@ -200,6 +202,20 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumnetUpload.aspx.cs">
+      <DependentUpon>DocumnetUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumnetUpload.aspx.designer.cs">
+      <DependentUpon>DocumnetUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoValidation.aspx.cs">
+      <DependentUpon>VideoValidation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoValidation.aspx.designer.cs">
+      <DependentUpon>VideoValidation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgreeContract6.aspx.cs">
       <DependentUpon>AgreeContract6.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
