@@ -10,5 +10,5 @@ documentupload int, createdat smalldatetime,updatedat smalldatetime, status int)
 create table tblcontractdetails (contractdetailsid int, contractid int, contractselected varchar(100), 
 createdat smalldatetime,updatedat smalldatetime, status int);
 
-create table tblcontractdocument (contractdetailsid int, contractid int, documentid int,documenturl varchar(255),
+create table tblcontractdocument (contractdocumentid int, contractid int not null, documenttype varchar(255),documenturl varchar(255),document varbinary(max) not null, 
 createdat smalldatetime,updatedat smalldatetime, status int);
