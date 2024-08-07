@@ -12,3 +12,5 @@ createdat smalldatetime,updatedat smalldatetime, status int);
 
 create table tblcontractdocument (contractdocumentid int, contractid int not null, documenttype varchar(255),documenturl varchar(255),document varbinary(max) not null, 
 createdat smalldatetime,updatedat smalldatetime, status int);
+
+alter table tblcontract add companyid int
