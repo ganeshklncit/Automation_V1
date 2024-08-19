@@ -7,11 +7,12 @@
     <div class="col-md-6">
              <div class="form-group">
                 <label asp-for="txtcompanyname" class="control-label">Company Name</label>
+                 </br>
                  <asp:TextBox ID="txtcompanyname" runat="server" class="form-control"></asp:TextBox>           
             </div>
             <br/>
  
-         <asp:Button ID="btnSubmit" class="button" runat="server" Text="Login" 
+         <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" Text="Login" 
                              Width="82px" OnClick="btnSubmit_Click" />
 
             </div>

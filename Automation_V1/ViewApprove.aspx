@@ -23,11 +23,13 @@
                 </ItemTemplate>  
             </asp:TemplateField>  
         </Columns>  
-    </asp:GridView>  
+    </asp:GridView>
 
+    <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
+
+    <br />
      <asp:Button ID="btnSubmit" class="button" runat="server" Text="Approve" 
                      Width="82px" OnClick="btnSubmit_Click"  />
 
-</div>  
 
 </asp:Content>

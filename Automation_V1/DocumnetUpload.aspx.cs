@@ -121,6 +121,41 @@ namespace Automation_V1
             Response.End();
         }
 
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            sendemail();
+        }
 
+        public void sendemail()
+        {
+            string userEmail = "s.ganesh@alliedworldwide.com";
+            string userCC = "";
+            string userBCC = "";
+            string strSubject = "";
+            string Body = "";
+
+            string str = " select distinct a.contactname from tblcontractdetails as b inner join tblcontract as a on a.contractid = b.contractid where b.contractdetailsid = '" + txtContractnumber.Value + "'";
+            DataSet ds = gen.Get_Recordset(str, "mst_group");
+
+            strSubject = "Video Uploaded Completed by " + ds.Tables[0].Rows[0][0].ToString() + "";
+
+            string strBody = "";
+            strBody = strBody + "<body >";
+
+            strBody = strBody + "<table style='display: block; font-family: sans-serif;'>";
+            strBody = strBody + "<tbody>";
+            strBody = strBody + "<tr>";
+            strBody = strBody + "<td>Video Document Upload completed" + ds.Tables[0].Rows[0][0].ToString() + "</td>";
+            strBody = strBody + "</tr>";
+
+            strBody = strBody + "</tbody>";
+            strBody = strBody + " </table>";
+
+            Body = strBody;
+
+            string sendEmail = gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
+
+
+        }
     }
 }

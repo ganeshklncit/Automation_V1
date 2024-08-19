@@ -51,6 +51,15 @@ namespace Automation_V1
         protected global::System.Web.UI.WebControls.CheckBox chkcontract1;
 
         /// <summary>
+        /// lbl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl1;
+
+        /// <summary>
         /// chkcontract2 control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace Automation_V1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkcontract2;
+
+        /// <summary>
+        /// lbl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl2;
 
         /// <summary>
         /// chkcontract3 control.
@@ -69,6 +87,15 @@ namespace Automation_V1
         protected global::System.Web.UI.WebControls.CheckBox chkcontract3;
 
         /// <summary>
+        /// lbl3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl3;
+
+        /// <summary>
         /// chkcontract4 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +103,15 @@ namespace Automation_V1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkcontract4;
+
+        /// <summary>
+        /// lbl4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl4;
 
         /// <summary>
         /// chkcontract5 control.
@@ -87,6 +123,15 @@ namespace Automation_V1
         protected global::System.Web.UI.WebControls.CheckBox chkcontract5;
 
         /// <summary>
+        /// lbl5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl5;
+
+        /// <summary>
         /// chkcontract6 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +139,15 @@ namespace Automation_V1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkcontract6;
+
+        /// <summary>
+        /// lbl6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl6;
 
         /// <summary>
         /// txtAmount control.
@@ -112,5 +166,14 @@ namespace Automation_V1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
+
+        /// <summary>
+        /// btnSendVideoLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSendVideoLink;
     }
 }

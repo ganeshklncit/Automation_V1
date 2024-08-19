@@ -37,7 +37,7 @@ namespace Automation_V1
 
         public void loadContract()
         {
-            string str = "select contractid,contactname from tblcontract where status = 1 and companyid=" + ddlCompany.SelectedItem.Value + "";
+            string str = "select contractid,contactname from tblcontract where companyid=" + ddlCompany.SelectedItem.Value + "";
             DataSet ds = gen.Get_Recordset(str, "tblcontract");
 
             ddlContract.DataSource = ds;
@@ -46,6 +46,10 @@ namespace Automation_V1
 
             ddlContract.DataBind();
             ddlContract.Items.Insert(0, new ListItem("Select"));
+
+           
+
+           
         }
 
         protected void ddlCompany_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,6 +60,7 @@ namespace Automation_V1
         protected void ddlContract_SelectedIndexChanged(object sender, EventArgs e)
         {
             BindGrid();
+            loadstatus();
         }
 
         private void BindGrid()
@@ -65,7 +70,7 @@ namespace Automation_V1
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = "select contractdocumentid, documenturl from tblcontractdocument where contractid='" + ddlContract.SelectedItem.Value + "'";
+                    cmd.CommandText = "select contractdocumentid, documenturl,updatedat, status  from tblcontractdocument where contractid='" + ddlContract.SelectedItem.Value + "'";
                     cmd.Connection = con;
                     con.Open();
                     GridView1.DataSource = cmd.ExecuteReader();
@@ -108,13 +113,39 @@ namespace Automation_V1
             Response.BinaryWrite(bytes);
             Response.Flush();
             Response.End();
+
+
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string str = "update tblcontractdocument set updatedat = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',status = '2' where contractid = '" + ddlContract.SelectedItem.Value + "'";
+            string str = "update tblcontract set updatedat = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',status = '2' where contractid = '" + ddlContract.SelectedItem.Value + "'";
             int result = gen.insert_value(str);
+
+            str = "update tblcontractdocument set updatedat = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',status = '2' where contractid = '" + ddlContract.SelectedItem.Value + "'";
+            result = gen.insert_value(str);
+
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Document Verified Succesfully');", true);
+        }
+
+
+        public void loadstatus()
+        {
+            string str = "select contractid,contactname,status,updatedat from tblcontract where contractid=" + ddlContract.SelectedItem.Value + "";
+            DataSet ds = gen.Get_Recordset(str, "tblcontract");
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                Label1.Visible = true;
+                if (Convert.ToInt32(ds.Tables[0].Rows[0][2]) == 1)
+                {
+                    Label1.Text = "Waiting for approval";
+                }
+                else if(Convert.ToInt32(ds.Tables[0].Rows[0][2]) == 2)
+                {
+                    Label1.Text = "Approved on " + ds.Tables[0].Rows[0][3].ToString();
+                }
+            }
         }
     }
 }

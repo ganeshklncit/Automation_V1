@@ -29,6 +29,10 @@
         </asp:GridView>  
     </div>  
 
+
+
+    <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn-primary" OnClick="btnSubmit_Click" />  
+
     </div>
  
 

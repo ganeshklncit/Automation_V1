@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -25,15 +26,45 @@ namespace Automation_V1
             {
                 string str = "update tblcontractdetails set updatedat = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',status = '2' where contractdetailsid = '" + txtContractnumber.Value + "'";
                 int result = gen.insert_value(str);
+                sendemail();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Contract agreed Succesfully');", true);
-
             }
             else
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Please check the Checkbox before Accept');", true);
             }
-  
-            
+        }
+
+        public void sendemail()
+        {
+            string userEmail = "s.ganesh@alliedworldwide.com";
+            string userCC = "";
+            string userBCC = "";
+            string strSubject = "";
+            string Body = "";
+
+            string str = " select distinct a.contactname from tblcontractdetails as b inner join tblcontract as a on a.contractid = b.contractid where b.contractdetailsid = '" + txtContractnumber.Value + "'";
+            DataSet ds = gen.Get_Recordset(str, "mst_group");
+
+            strSubject = "Contract Accept Request " + ds.Tables[0].Rows[0][0].ToString() + "";
+
+            string strBody = "";
+            strBody = strBody + "<body >";
+
+            strBody = strBody + "<table style='display: block; font-family: sans-serif;'>";
+            strBody = strBody + "<tbody>";
+            strBody = strBody + "<tr>";
+            strBody = strBody + "<td>Contract Six Succefully accepted  by " + ds.Tables[0].Rows[0][0].ToString() + "</td>";
+            strBody = strBody + "</tr>";
+
+            strBody = strBody + "</tbody>";
+            strBody = strBody + " </table>";
+
+            Body = strBody;
+
+            string sendEmail = gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
+
+
         }
     }
 }
