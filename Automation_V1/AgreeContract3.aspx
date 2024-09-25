@@ -15,7 +15,7 @@
 
         <asp:CheckBox ID="chkContract" runat="server" />
  
-         <asp:Button ID="btnSubmit" class="button" runat="server" Text="Login" 
+         <asp:Button ID="btnSubmit" class="button" runat="server" Text="Accept" 
                              Width="82px" OnClick="btnSubmit_Click" />
 
             </div>

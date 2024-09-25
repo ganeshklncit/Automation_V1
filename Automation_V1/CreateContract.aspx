@@ -38,8 +38,9 @@
      </div>
 
       <div class="form-group">
-       <label asp-for="txtAmount" class="control-label">Monthly Amount</label>
-      <asp:TextBox ID="txtAmount" runat="server" class="form-control"></asp:TextBox>     
+       <label asp-for="txtAmount" class="control-label">Monthly Amount GBP</label>
+      <asp:TextBox ID="txtAmount" runat="server" class="form-control"></asp:TextBox>      + VAT
+        
        </div>
 
      <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" Text="Create Contract" Width="237px" OnClick="btnSubmit_Click" />
