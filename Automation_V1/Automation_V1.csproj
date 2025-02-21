@@ -100,13 +100,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="CreateEmployee.aspx" />
+    <Content Include="limited_company_statutory_accounts_preparation.aspx" />
+    <Content Include="limited_company_charity_accounts.aspx" />
+    <Content Include="vat.aspx" />
+    <Content Include="unregistered_club_account.aspx" />
+    <Content Include="unincorporated_charity_accounts_accruals.aspx" />
+    <Content Include="unicorporated_charity_accounts_receipts_payments.aspx" />
+    <Content Include="sole_trader_accounts_preparation.aspx" />
+    <Content Include="SCIO_charity_accounts.aspx" />
+    <Content Include="payroll_services.aspx" />
+    <Content Include="partnership_accounts_preparation.aspx" />
+    <Content Include="LLP_accounts.aspx" />
+    <Content Include="general_terms_conditions_all_clients.aspx" />
+    <Content Include="corporation_tax.aspx" />
+    <Content Include="Content\custom.css" />
     <Content Include="DocumnetUpload.aspx" />
-    <Content Include="VideoValidation.aspx" />
-    <Content Include="AgreeContract6.aspx" />
-    <Content Include="AgreeContract5.aspx" />
-    <Content Include="AgreeContract4.aspx" />
-    <Content Include="AgreeContract3.aspx" />
-    <Content Include="AgreeContract2.aspx" />
+    <Content Include="Images\agreement.jpg" />
+    <Content Include="Images\building.jpg" />
+    <Content Include="Images\Contract.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logo1.png" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -125,7 +139,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="AgreeContract1.aspx" />
+    <Content Include="CIC-accounts.aspx" />
     <Content Include="createclient.aspx" />
     <Content Include="CreateContract.aspx" />
     <Content Include="Default.aspx" />
@@ -196,6 +210,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="VideoStatement.aspx" />
     <Content Include="ViewApprove.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -203,54 +218,110 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEmployee.aspx.cs">
+      <DependentUpon>CreateEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateEmployee.aspx.designer.cs">
+      <DependentUpon>CreateEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="limited_company_statutory_accounts_preparation.aspx.cs">
+      <DependentUpon>limited_company_statutory_accounts_preparation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="limited_company_statutory_accounts_preparation.aspx.designer.cs">
+      <DependentUpon>limited_company_statutory_accounts_preparation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="limited_company_charity_accounts.aspx.cs">
+      <DependentUpon>limited_company_charity_accounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="limited_company_charity_accounts.aspx.designer.cs">
+      <DependentUpon>limited_company_charity_accounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vat.aspx.cs">
+      <DependentUpon>vat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vat.aspx.designer.cs">
+      <DependentUpon>vat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="unregistered_club_account.aspx.cs">
+      <DependentUpon>unregistered_club_account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="unregistered_club_account.aspx.designer.cs">
+      <DependentUpon>unregistered_club_account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="unincorporated_charity_accounts_accruals.aspx.cs">
+      <DependentUpon>unincorporated_charity_accounts_accruals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="unincorporated_charity_accounts_accruals.aspx.designer.cs">
+      <DependentUpon>unincorporated_charity_accounts_accruals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="unicorporated_charity_accounts_receipts_payments.aspx.cs">
+      <DependentUpon>unicorporated_charity_accounts_receipts_payments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="unicorporated_charity_accounts_receipts_payments.aspx.designer.cs">
+      <DependentUpon>unicorporated_charity_accounts_receipts_payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sole_trader_accounts_preparation.aspx.cs">
+      <DependentUpon>sole_trader_accounts_preparation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sole_trader_accounts_preparation.aspx.designer.cs">
+      <DependentUpon>sole_trader_accounts_preparation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SCIO_charity_accounts.aspx.cs">
+      <DependentUpon>SCIO_charity_accounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SCIO_charity_accounts.aspx.designer.cs">
+      <DependentUpon>SCIO_charity_accounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payroll_services.aspx.cs">
+      <DependentUpon>payroll_services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payroll_services.aspx.designer.cs">
+      <DependentUpon>payroll_services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="partnership_accounts_preparation.aspx.cs">
+      <DependentUpon>partnership_accounts_preparation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="partnership_accounts_preparation.aspx.designer.cs">
+      <DependentUpon>partnership_accounts_preparation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LLP_accounts.aspx.cs">
+      <DependentUpon>LLP_accounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LLP_accounts.aspx.designer.cs">
+      <DependentUpon>LLP_accounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="general_terms_conditions_all_clients.aspx.cs">
+      <DependentUpon>general_terms_conditions_all_clients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="general_terms_conditions_all_clients.aspx.designer.cs">
+      <DependentUpon>general_terms_conditions_all_clients.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="corporation_tax.aspx.cs">
+      <DependentUpon>corporation_tax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="corporation_tax.aspx.designer.cs">
+      <DependentUpon>corporation_tax.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DocumnetUpload.aspx.cs">
       <DependentUpon>DocumnetUpload.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DocumnetUpload.aspx.designer.cs">
       <DependentUpon>DocumnetUpload.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VideoValidation.aspx.cs">
-      <DependentUpon>VideoValidation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VideoValidation.aspx.designer.cs">
-      <DependentUpon>VideoValidation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AgreeContract6.aspx.cs">
-      <DependentUpon>AgreeContract6.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AgreeContract6.aspx.designer.cs">
-      <DependentUpon>AgreeContract6.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AgreeContract5.aspx.cs">
-      <DependentUpon>AgreeContract5.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AgreeContract5.aspx.designer.cs">
-      <DependentUpon>AgreeContract5.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AgreeContract4.aspx.cs">
-      <DependentUpon>AgreeContract4.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AgreeContract4.aspx.designer.cs">
-      <DependentUpon>AgreeContract4.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AgreeContract3.aspx.cs">
-      <DependentUpon>AgreeContract3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AgreeContract3.aspx.designer.cs">
-      <DependentUpon>AgreeContract3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AgreeContract2.aspx.cs">
-      <DependentUpon>AgreeContract2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AgreeContract2.aspx.designer.cs">
-      <DependentUpon>AgreeContract2.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -269,12 +340,12 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Content Include="Database\Query.sql" />
-    <Compile Include="AgreeContract1.aspx.cs">
-      <DependentUpon>AgreeContract1.aspx</DependentUpon>
+    <Compile Include="CIC-accounts.aspx.cs">
+      <DependentUpon>CIC-accounts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AgreeContract1.aspx.designer.cs">
-      <DependentUpon>AgreeContract1.aspx</DependentUpon>
+    <Compile Include="CIC-accounts.aspx.designer.cs">
+      <DependentUpon>CIC-accounts.aspx</DependentUpon>
     </Compile>
     <Compile Include="createclient.aspx.cs">
       <DependentUpon>createclient.aspx</DependentUpon>
@@ -322,6 +393,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="VideoStatement.aspx.cs">
+      <DependentUpon>VideoStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoStatement.aspx.designer.cs">
+      <DependentUpon>VideoStatement.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewApprove.aspx.cs">
       <DependentUpon>ViewApprove.aspx</DependentUpon>

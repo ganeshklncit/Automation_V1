@@ -11,7 +11,7 @@ namespace Automation_V1
 {
 
 
-    public partial class AgreeContract4
+    public partial class unincorporated_charity_accounts_accruals
     {
 
         /// <summary>

@@ -11,26 +11,35 @@ namespace Automation_V1
 {
 
 
-    public partial class AgreeContract5
+    public partial class CreateEmployee
     {
 
         /// <summary>
-        /// txtContractnumber control.
+        /// ddlCompany control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField txtContractnumber;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCompany;
 
         /// <summary>
-        /// chkContract control.
+        /// txtContactName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkContract;
+        protected global::System.Web.UI.WebControls.TextBox txtContactName;
+
+        /// <summary>
+        /// txtemail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtemail;
 
         /// <summary>
         /// btnSubmit control.

@@ -9,9 +9,12 @@ namespace Automation_V1
 {
     public partial class SiteMaster : MasterPage
     {
+       
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["userid"] = "admin"; 
+            lblFullName.Text = (String)Session["userid"] + " ! ";
         }
     }
 }

@@ -46,9 +46,6 @@ namespace Automation_V1
 
             ddlContract.DataBind();
             ddlContract.Items.Insert(0, new ListItem("Select"));
-
-           
-
            
         }
 

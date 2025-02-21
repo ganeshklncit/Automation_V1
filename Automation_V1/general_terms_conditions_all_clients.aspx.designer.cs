@@ -11,7 +11,7 @@ namespace Automation_V1
 {
 
 
-    public partial class AgreeContract3
+    public partial class general_terms_conditions_all_clients
     {
 
         /// <summary>

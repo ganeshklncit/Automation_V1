@@ -40,10 +40,10 @@ namespace Automation_V1
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string getscalar = gen.scalar_result("select max(contractid) from tblcontract");
-            int max = gen.checkmax(getscalar);
+            string str = "update tblcontract set amount = '" + txtAmount.Text + "' , createdat = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', updatedat = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where companyid =" + ddlCompany.SelectedItem.Value + " and contractid =" + txtContactName.SelectedItem.Value;
 
-            string str = "insert into tblcontract values (" + max + ",'" + txtContactName.Text + "','" + txtemail.Text + "','" + txtAmount.Text + "','0','0','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','1','" + ddlCompany.SelectedItem.Value + "')";
+            int max = Convert.ToInt32(txtContactName.SelectedItem.Value);
+
             int result = gen.insert_value(str);
 
             if (chkcontract1.Checked)
@@ -69,6 +69,38 @@ namespace Automation_V1
             if (chkcontract6.Checked)
             {
                 insertContract(max, chkcontract6.Text);
+            }
+            if (chkcontract7.Checked)
+            {
+                insertContract(max, chkcontract7.Text);
+            }
+            if (chkcontract8.Checked)
+            {
+                insertContract(max, chkcontract8.Text);
+            }
+            if (chkcontract9.Checked)
+            {
+                insertContract(max, chkcontract9.Text);
+            }
+            if (chkcontract10.Checked)
+            {
+                insertContract(max, chkcontract10.Text);
+            }
+            if (chkcontract11.Checked)
+            {
+                insertContract(max, chkcontract11.Text);
+            }
+            if (chkcontract12.Checked)
+            {
+                insertContract(max, chkcontract12.Text);
+            }
+            if (chkcontract13.Checked)
+            {
+                insertContract(max, chkcontract13.Text);
+            }
+            if (chkcontract14.Checked)
+            {
+                insertContract(max, chkcontract14.Text);
             }
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Company Contract Created Succesfully');", true);
         }
@@ -96,42 +128,91 @@ namespace Automation_V1
             strBody = strBody + "<tr>";
             strBody = strBody + "<td>Contract Created by Automation team, Please accept the contract by click the below url</td>";
             strBody = strBody + "</tr>";
-            if (contract == "Contract one")
+            if (contract == "CIC accounts")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/AgreeContract1?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://localhost:44313/CIC-accounts?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
-            if (contract == "Contract Two")
+            if (contract == "Corporation Tax")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/AgreeContract2?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://localhost:44313/corporation_tax?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
-            if (contract == "Contract Three")
+            if (contract == "General Terms and Conditions All Clients")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/AgreeContract3?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://localhost:44313/general_terms_conditions_all_clients?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
-            if (contract == "Contract Four")
+            if (contract == "LLP Accounts")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/AgreeContract4?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://localhost:44313/LLP_accounts?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
-            if (contract == "Contract Five")
+            if (contract == "Partnership accounts preperation")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/AgreeContract5?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://localhost:44313/partnership_accounts_preparation?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
-            if (contract == "Contract Six")
+            if (contract == "Payroll Services")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/AgreeContract6?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://localhost:44313/payroll_services?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
+            if (contract == "SCIO Charity accounts")
+            {
+                strBody = strBody + "<tr>";
+                strBody = strBody + "<td>https://localhost:44313/SCIO_charity_accounts?cid=" + max + "</td>";
+                strBody = strBody + "</tr>";
+            }
+            if (contract == "Sole Trader accounts Preperation")
+            {
+                strBody = strBody + "<tr>";
+                strBody = strBody + "<td>https://localhost:44313/sole_trader_accounts_preparation?cid=" + max + "</td>";
+                strBody = strBody + "</tr>";
+            }
+            if (contract == "Unicorporated Charity accounts receipts Payments")
+            {
+                strBody = strBody + "<tr>";
+                strBody = strBody + "<td>https://localhost:44313/unicorporated_charity_accounts_receipts_payments?cid=" + max + "</td>";
+                strBody = strBody + "</tr>";
+            }
+            if (contract == "Unicorporated Charity accounts accruals")
+            {
+                strBody = strBody + "<tr>";
+                strBody = strBody + "<td>https://localhost:44313/unincorporated_charity_accounts_accruals?cid=" + max + "</td>";
+                strBody = strBody + "</tr>";
+            }
+            if (contract == "unregistred club accounts")
+            {
+                strBody = strBody + "<tr>";
+                strBody = strBody + "<td>https://localhost:44313/unregistered_club_account?cid=" + max + "</td>";
+                strBody = strBody + "</tr>";
+            }
+            if (contract == "VAT")
+            {
+                strBody = strBody + "<tr>";
+                strBody = strBody + "<td>https://localhost:44313/vat?cid=" + max + "</td>";
+                strBody = strBody + "</tr>";
+            }
+            if (contract == "Limited Company Charity accouts")
+            {
+                strBody = strBody + "<tr>";
+                strBody = strBody + "<td>https://localhost:44313/limited_company_charity_accounts?cid=" + max + "</td>";
+                strBody = strBody + "</tr>";
+            }
+            if (contract == "Limited Company Statuory accounts preperation")
+            {
+                strBody = strBody + "<tr>";
+                strBody = strBody + "<td>https://localhost:44313/limited_company_statutory_accounts_preparation?cid=" + max + "</td>";
+                strBody = strBody + "</tr>";
+            }
+
             strBody = strBody + "</tbody>";
             strBody = strBody + " </table>";
 
@@ -140,113 +221,23 @@ namespace Automation_V1
             string sendEmail = gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
 
         }
-
+        
         protected void ddlCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string str = "select * from tblcontract where companyid = '" + ddlCompany.SelectedItem.Value + "'";
-            DataSet ds = gen.Get_Recordset(str, "mst_group");
+           loadContract();
+        }
 
-            if (ds.Tables[0].Rows.Count != 0)
-            {
-                txtContactName.Text = ds.Tables[0].Rows[0][1].ToString();
-                txtAmount.Text = ds.Tables[0].Rows[0][3].ToString();
-                txtemail.Text = ds.Tables[0].Rows[0][2].ToString();
+        public void loadContract()
+        {
+            string str = "select contractid,contactname from tblcontract where companyid=" + ddlCompany.SelectedItem.Value + "";
+            DataSet ds = gen.Get_Recordset(str, "tblcontract");
 
-                string strDetails = "select * from tblcontractdetails where contractid = '" + ds.Tables[0].Rows[0][0].ToString() + "'";
-                DataSet dsDetails = gen.Get_Recordset(strDetails, "mst_group");
+            txtContactName.DataSource = ds;
+            txtContactName.DataTextField = "contactname";
+            txtContactName.DataValueField = "contractid";
 
-                if (dsDetails.Tables[0].Rows.Count != 0)
-                {
-                    for (int i = 0; i < dsDetails.Tables[0].Rows.Count; i++)
-                    {
-                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Contract one")
-                        {
-                            chkcontract1.Checked = true;
-
-                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
-                            {
-                                lbl1.Visible = true;
-                                lbl1.Text = "Waiting for approval";
-                            }
-                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
-                            {
-                                lbl1.Visible = true;
-                                lbl1.Text = "Accepted";
-                            }
-                        }
-                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Contract Two")
-                        {
-                            chkcontract2.Checked = true;
-                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
-                            {
-                                lbl2.Visible = true;
-                                lbl2.Text = "Waiting for approval";
-                            }
-                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
-                            {
-                                lbl2.Visible = true;
-                                lbl2.Text = "Accepted";
-                            }
-                        }
-                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Contract Three")
-                        {
-                            chkcontract3.Checked = true;
-                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
-                            {
-                                lbl3.Visible = true;
-                                lbl3.Text = "Waiting for approval";
-                            }
-                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
-                            {
-                                lbl3.Visible = true;
-                                lbl3.Text = "Accepted";
-                            }
-                        }
-                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Contract Four")
-                        {
-                            chkcontract4.Checked = true;
-                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
-                            {
-                                lbl4.Visible = true;
-                                lbl4.Text = "Waiting for approval";
-                            }
-                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
-                            {
-                                lbl4.Visible = true;
-                                lbl4.Text = "Accepted";
-                            }
-                        }
-                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Contract Five")
-                        {
-                            chkcontract5.Checked = true;
-                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
-                            {
-                                lbl5.Visible = true;
-                                lbl5.Text = "Waiting for approval";
-                            }
-                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
-                            {
-                                lbl5.Visible = true;
-                                lbl5.Text = "Accepted";
-                            }
-                        }
-                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Contract Six")
-                        {
-                            chkcontract6.Checked = true;
-                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
-                            {
-                                lbl6.Visible = true;
-                                lbl6.Text = "Waiting for approval";
-                            }
-                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
-                            {
-                                lbl6.Visible = true;
-                                lbl6.Text = "Accepted";
-                            }
-                        }
-                    }
-                }
-            }
+            txtContactName.DataBind();
+            txtContactName.Items.Insert(0, new ListItem("Select"));
         }
 
         protected void btnSendVideoLink_Click(object sender, EventArgs e)
@@ -286,6 +277,243 @@ namespace Automation_V1
 
             }
 
+        }
+
+        protected void btnEmployee_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateEmployee");
+        }
+
+        protected void txtContactName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string str = "select * from tblcontract where companyid =" + ddlCompany.SelectedItem.Value + " and contractid =" + txtContactName.SelectedItem.Value;
+            DataSet ds = gen.Get_Recordset(str, "mst_group");
+
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                txtAmount.Text = ds.Tables[0].Rows[0][3].ToString();
+                txtemail.Text = ds.Tables[0].Rows[0][2].ToString();
+
+                string strDetails = "select * from tblcontractdetails where contractid =" + ds.Tables[0].Rows[0][0].ToString();
+                DataSet dsDetails = gen.Get_Recordset(strDetails, "mst_group");
+
+                if (dsDetails.Tables[0].Rows.Count != 0)
+                {
+                    for (int i = 0; i < dsDetails.Tables[0].Rows.Count; i++)
+                    {
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "CIC accounts")
+                        {
+                            chkcontract1.Checked = true;
+
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl1.Visible = true;
+                                lbl1.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl1.Visible = true;
+                                lbl1.Text = "Accepted";
+                            }
+                        }
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Corporation Tax")
+                        {
+                            chkcontract2.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl2.Visible = true;
+                                lbl2.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl2.Visible = true;
+                                lbl2.Text = "Accepted";
+                            }
+                        }
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "General Terms and Conditions All Clients")
+                        {
+                            chkcontract3.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl3.Visible = true;
+                                lbl3.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl3.Visible = true;
+                                lbl3.Text = "Accepted";
+                            }
+                        }
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "LLP Accounts")
+                        {
+                            chkcontract4.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl4.Visible = true;
+                                lbl4.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl4.Visible = true;
+                                lbl4.Text = "Accepted";
+                            }
+                        }
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Partnership accounts preperation")
+                        {
+                            chkcontract5.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl5.Visible = true;
+                                lbl5.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl5.Visible = true;
+                                lbl5.Text = "Accepted";
+                            }
+                        }
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Payroll Services")
+                        {
+                            chkcontract6.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl6.Visible = true;
+                                lbl6.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl6.Visible = true;
+                                lbl6.Text = "Accepted";
+                            }
+                        }
+
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "SCIO Charity accounts")
+                        {
+                            chkcontract7.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl7.Visible = true;
+                                lbl7.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl7.Visible = true;
+                                lbl7.Text = "Accepted";
+                            }
+                        }
+
+
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Sole Trader accounts Preperation")
+                        {
+                            chkcontract8.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl8.Visible = true;
+                                lbl8.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl8.Visible = true;
+                                lbl8.Text = "Accepted";
+                            }
+                        }
+
+
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Unicorporated Charity accounts receipts Payments")
+                        {
+                            chkcontract9.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl9.Visible = true;
+                                lbl9.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl9.Visible = true;
+                                lbl9.Text = "Accepted";
+                            }
+                        }
+
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Unicorporated Charity accounts accruals")
+                        {
+                            chkcontract10.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl10.Visible = true;
+                                lbl10.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl10.Visible = true;
+                                lbl10.Text = "Accepted";
+                            }
+                        }
+
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "unregistred club accounts")
+                        {
+                            chkcontract11.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl11.Visible = true;
+                                lbl11.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl11.Visible = true;
+                                lbl11.Text = "Accepted";
+                            }
+                        }
+
+
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "VAT")
+                        {
+                            chkcontract12.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl12.Visible = true;
+                                lbl12.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl12.Visible = true;
+                                lbl12.Text = "Accepted";
+                            }
+                        }
+
+
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Limited Company Charity accouts")
+                        {
+                            chkcontract13.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl13.Visible = true;
+                                lbl13.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl13.Visible = true;
+                                lbl13.Text = "Accepted";
+                            }
+                        }
+
+
+                        if (dsDetails.Tables[0].Rows[i][2].ToString() == "Limited Company Statuory accounts preperation")
+                        {
+                            chkcontract14.Checked = true;
+                            if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 1)
+                            {
+                                lbl14.Visible = true;
+                                lbl14.Text = "Waiting for approval";
+                            }
+                            else if (Convert.ToInt32(dsDetails.Tables[0].Rows[i][5]) == 2)
+                            {
+                                lbl14.Visible = true;
+                                lbl14.Text = "Accepted";
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

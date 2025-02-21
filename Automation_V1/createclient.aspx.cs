@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +14,10 @@ namespace Automation_V1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                BindGrid();
+            }
         }
 
         protected void btnSubmit_Click(System.Object sender, System.EventArgs e)
@@ -28,5 +32,18 @@ namespace Automation_V1
                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Company Created Succesfully');", true);
             
         }
+
+
+        private void BindGrid()
+        {
+
+            string str = "select * from tblcompany where status = 1";
+            DataSet ds = gen.Get_Recordset(str, "mst_group");
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
+
+        }
+
+
     }
 }

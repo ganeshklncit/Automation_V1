@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Automation_V1
 {
-    public partial class AgreeContract4 : System.Web.UI.Page
+    public partial class payroll_services : System.Web.UI.Page
     {
         general gen = new general();
 
@@ -57,9 +58,9 @@ namespace Automation_V1
             strBody = strBody + "<table style='display: block; font-family: sans-serif;'>";
             strBody = strBody + "<tbody>";
             strBody = strBody + "<tr>";
-            strBody = strBody + "<td>Contract Four Succefully accepted  by " + ds.Tables[0].Rows[0][0].ToString() + "</td>";
+            strBody = strBody + "<td>Contract one Succefully accepted  by " + ds.Tables[0].Rows[0][0].ToString() + "</td>";
             strBody = strBody + "</tr>";
-
+          
             strBody = strBody + "</tbody>";
             strBody = strBody + " </table>";
 
@@ -67,9 +68,7 @@ namespace Automation_V1
 
             string sendEmail = gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
 
-
+            
         }
-
-
     }
 }

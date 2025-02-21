@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Automation_V1
 {
-    public partial class AgreeContract6 : System.Web.UI.Page
+    public partial class unregistered_club_account : System.Web.UI.Page
     {
         general gen = new general();
 
@@ -28,11 +29,14 @@ namespace Automation_V1
                 int result = gen.insert_value(str);
                 sendemail();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Contract agreed Succesfully');", true);
+
             }
             else
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Please check the Checkbox before Accept');", true);
             }
+  
+            
         }
 
         public void sendemail()
@@ -54,9 +58,9 @@ namespace Automation_V1
             strBody = strBody + "<table style='display: block; font-family: sans-serif;'>";
             strBody = strBody + "<tbody>";
             strBody = strBody + "<tr>";
-            strBody = strBody + "<td>Contract Six Succefully accepted  by " + ds.Tables[0].Rows[0][0].ToString() + "</td>";
+            strBody = strBody + "<td>Contract one Succefully accepted  by " + ds.Tables[0].Rows[0][0].ToString() + "</td>";
             strBody = strBody + "</tr>";
-
+          
             strBody = strBody + "</tbody>";
             strBody = strBody + " </table>";
 
@@ -64,7 +68,7 @@ namespace Automation_V1
 
             string sendEmail = gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
 
-
+            
         }
     }
 }
