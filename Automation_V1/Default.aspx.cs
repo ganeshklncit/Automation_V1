@@ -11,6 +11,15 @@ namespace Automation_V1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            if (!IsPostBack)
+            {
+                loadContract();
+            }
+        }
+
+        public void loadContract()
+        {
 
         }
     }

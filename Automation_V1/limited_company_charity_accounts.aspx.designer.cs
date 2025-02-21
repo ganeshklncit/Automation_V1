@@ -11,7 +11,7 @@ namespace Automation_V1
 {
 
 
-    public partial class AgreeContract3
+    public partial class limited_company_charity_accounts
     {
 
         /// <summary>

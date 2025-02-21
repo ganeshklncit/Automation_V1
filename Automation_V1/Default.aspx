@@ -3,47 +3,81 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
+   
+         <div class="row">
+
+                 <h2> Welcome to Thyme Contract Management</h2>
+
+
+
+             <hr />
+
+             </div>
 
         <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
-                <p>
-                   <a class="btn btn-default" href="createclient.aspx">Create Client</a></p>
 
-                <p>
-                    <a class="btn btn-default" href="createContract.aspx">Create Contract</a></p></p>
-            </section>
+
+
+            
+             
+
+    <div class="col-md-3">
+      
+
+                <div class="card" style="width: 18rem;">
+  <img src="Images/building.jpg" class="card-img-top" alt="Company">
+  <div class="card-body">
+    <h5 class="card-title">Create Company</h5>
+    <p class="card-text">This Link used to create the Company</p>
+    <a href="createclient" class="btn custom-btn">Click Here</a>
+  </div>
+</div>
+
         </div>
+
+                      <div class="col-md-3">
+                
+                             <div class="card" style="width: 18rem;">
+  <img src="Images/Contract.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Create Contract</h5>
+    <p class="card-text">This Link used to create the Contract</p>
+    <a href="createContract" class="btn custom-btn">Click Here</a>
+  </div>
+</div>
+
+</div>
+
+                      <div class="col-md-3">
+                
+                <div class="card" style="width: 18rem;">
+  <img src="images/agreement.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Approve Document</h5>
+    <p class="card-text">This Link used to approve the pending Documents</p>
+    <a href="ViewApprove" class="btn custom-btn">Click Here</a>
+  </div>
+</div>
+</div>
+                
+
+            
+                      <div class="col-md-3">
+                
+                <div class="card" style="width: 18rem;">
+  <img src="images/agreement.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Reports</h5>
+    <p class="card-text">This Link has customised Report designed</p>
+    <a href="" class="btn custom-btn">Click Here</a>
+  </div>
+</div>
+</div>
+
+         
+        </div>
+
+           
     </main>
 
 </asp:Content>

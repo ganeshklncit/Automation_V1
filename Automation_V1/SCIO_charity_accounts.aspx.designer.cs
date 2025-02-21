@@ -11,7 +11,7 @@ namespace Automation_V1
 {
 
 
-    public partial class AgreeContract5
+    public partial class SCIO_charity_accounts
     {
 
         /// <summary>
