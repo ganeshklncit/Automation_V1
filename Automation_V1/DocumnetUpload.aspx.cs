@@ -188,7 +188,7 @@ namespace Automation_V1
 
         public void sendemail()
         {
-            string userEmail = "s.ganesh@alliedworldwide.com";
+            string userEmail = gen.senderEmail;
             string userCC = "";
             string userBCC = "";
             string strSubject = "";

@@ -41,7 +41,7 @@ namespace Automation_V1
 
         public void sendemail()
         {
-            string userEmail = "s.ganesh@alliedworldwide.com";
+            string userEmail = gen.senderEmail;
             string userCC = "";
             string userBCC = "";
             string strSubject = "";
@@ -58,7 +58,7 @@ namespace Automation_V1
             strBody = strBody + "<table style='display: block; font-family: sans-serif;'>";
             strBody = strBody + "<tbody>";
             strBody = strBody + "<tr>";
-            strBody = strBody + "<td>Contract one Succefully accepted  by " + ds.Tables[0].Rows[0][0].ToString() + "</td>";
+            strBody = strBody + "<td>Corporation tax Succefully accepted  by " + ds.Tables[0].Rows[0][0].ToString() + "</td>";
             strBody = strBody + "</tr>";
           
             strBody = strBody + "</tbody>";

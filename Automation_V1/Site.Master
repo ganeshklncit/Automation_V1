@@ -83,9 +83,8 @@ background: linear-gradient(90deg, rgba(183,222,230,1) 0%, rgba(255,255,255,1) 1
 
                         <li class="nav-item">Welcome <asp:Label ID="lblFullName" Text="" runat="server" /></li> &nbsp; 
                     </ul>
-                     <button type="button" class="btn custom-btn">Log out</button>
-
-                  
+                    <asp:Button ID="btnLogout" runat="server" Text="Log out" CssClass="btn custom-btn" OnClick="btnLogout_Click" />
+                                      
                 </div>
             </div>
         </nav>

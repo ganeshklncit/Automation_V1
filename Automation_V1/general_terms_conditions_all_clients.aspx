@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="general_terms_conditions_all_clients.aspx.cs" Inherits="Automation_V1.general_terms_conditions_all_clients" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="general_terms_conditions_all_clients.aspx.cs" Inherits="Automation_V1.general_terms_conditions_all_clients" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     

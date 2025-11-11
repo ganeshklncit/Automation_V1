@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="limited_company_charity_accounts.aspx.cs" Inherits="Automation_V1.limited_company_charity_accounts" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="limited_company_charity_accounts.aspx.cs" Inherits="Automation_V1.limited_company_charity_accounts" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     

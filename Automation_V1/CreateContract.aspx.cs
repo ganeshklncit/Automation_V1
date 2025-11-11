@@ -131,85 +131,85 @@ namespace Automation_V1
             if (contract == "CIC accounts")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/CIC-accounts?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/CIC-accounts?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "Corporation Tax")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/corporation_tax?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/corporation_tax?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "General Terms and Conditions All Clients")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/general_terms_conditions_all_clients?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/general_terms_conditions_all_clients?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "LLP Accounts")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/LLP_accounts?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/LLP_accounts?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "Partnership accounts preperation")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/partnership_accounts_preparation?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/partnership_accounts_preparation?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "Payroll Services")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/payroll_services?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/payroll_services?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "SCIO Charity accounts")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/SCIO_charity_accounts?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/SCIO_charity_accounts?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "Sole Trader accounts Preperation")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/sole_trader_accounts_preparation?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/sole_trader_accounts_preparation?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "Unicorporated Charity accounts receipts Payments")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/unicorporated_charity_accounts_receipts_payments?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/unicorporated_charity_accounts_receipts_payments?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "Unicorporated Charity accounts accruals")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/unincorporated_charity_accounts_accruals?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/unincorporated_charity_accounts_accruals?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "unregistred club accounts")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/unregistered_club_account?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/unregistered_club_account?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "VAT")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/vat?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/vat?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "Limited Company Charity accouts")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/limited_company_charity_accounts?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/limited_company_charity_accounts?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
             if (contract == "Limited Company Statuory accounts preperation")
             {
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/limited_company_statutory_accounts_preparation?cid=" + max + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/limited_company_statutory_accounts_preparation?cid=" + max + "</td>";
                 strBody = strBody + "</tr>";
             }
 
@@ -265,7 +265,7 @@ namespace Automation_V1
                 strBody = strBody + "</tr>";
 
                 strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://localhost:44313/DocumnetUpload?cid=" + ds.Tables[0].Rows[0][0].ToString() + "</td>";
+                strBody = strBody + "<td>https://www.thymepm.tax/DocumnetUpload?cid=" + ds.Tables[0].Rows[0][0].ToString() + "</td>";
                 strBody = strBody + "</tr>";
 
                 strBody = strBody + "</tbody>";

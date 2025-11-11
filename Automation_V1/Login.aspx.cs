@@ -27,7 +27,7 @@ namespace Automation_V1
             {
                 if (dslogin.Tables[0].Rows[0][0].ToString() == "1")
                 {
-                    Session["userid"] = dslogin.Tables[0].Rows[0][0].ToString();
+                    Session["userid"] = dslogin.Tables[0].Rows[0][1].ToString();
                     Response.Redirect("Default.aspx");
                 }
             }

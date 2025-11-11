@@ -13,8 +13,21 @@ namespace Automation_V1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["userid"] = "admin"; 
+            if (Session["userid"] == null)
+            {
+                // Redirect to login page if session is missing
+                Response.Redirect("Login.aspx");
+            }
+
             lblFullName.Text = (String)Session["userid"] + " ! ";
         }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
+        }
+
     }
 }

@@ -8,6 +8,7 @@ using System.Net.Mail;
 
 namespace Automation_V1
 {
+
     public class general
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
@@ -15,11 +16,12 @@ namespace Automation_V1
         DataSet ds;
         SqlDataAdapter adp;
         string smtpAddress = "smtp.office365.com";
-        string smtpUsername = "aria@alliedworldwide.com";
-        string smtpPassword = "@llied123";
+        string smtpUsername = "Thyme@alliedworldwide.com";
+        string smtpPassword = "Migrate@789$1";
         int smtpPort = 587;
-        string smtpEmailFrom = "aria@alliedworldwide.com";
+        string smtpEmailFrom = "Thyme@alliedworldwide.com";
 
+        public string senderEmail = "s.ganesh@alliedworldwide.com";
 
         public DataSet Get_Recordset(string strsql, string tablename)
         {

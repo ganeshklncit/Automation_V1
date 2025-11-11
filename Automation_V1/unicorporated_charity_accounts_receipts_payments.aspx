@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="unicorporated_charity_accounts_receipts_payments.aspx.cs" Inherits="Automation_V1.unicorporated_charity_accounts_receipts_payments" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="unicorporated_charity_accounts_receipts_payments.aspx.cs" Inherits="Automation_V1.unicorporated_charity_accounts_receipts_payments" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
