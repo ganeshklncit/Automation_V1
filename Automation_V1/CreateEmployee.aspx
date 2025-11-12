@@ -48,6 +48,19 @@
         <div class="col-md-3">
             <asp:TextBox ID="txtemail" runat="server" class="form-control"></asp:TextBox>
 
+ <asp:RequiredFieldValidator ID="rfvEmail" runat="server"
+     ControlToValidate="txtemail"
+     ErrorMessage="Email is required"
+     ForeColor="Red"
+     Display="Dynamic" />
+
+ <asp:RegularExpressionValidator ID="revEmail" runat="server"
+     ControlToValidate="txtemail"
+     ErrorMessage="Enter a valid email address"
+     ValidationExpression="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+     ForeColor="Red"
+     Display="Dynamic" />
+
         </div>
 
 

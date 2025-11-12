@@ -177,6 +177,8 @@ namespace Automation_V1
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             sendemail();
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Document Submitted for Validation');", true);
         }
 
         protected void btnAgree_Click(object sender, EventArgs e)

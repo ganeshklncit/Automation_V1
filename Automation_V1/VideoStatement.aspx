@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VideoStatement.aspx.cs" Inherits="Automation_V1.VideoStatement" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="VideoStatement.aspx.cs" Inherits="Automation_V1.VideoStatement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
      <div class="row">

@@ -103,6 +103,8 @@ namespace Automation_V1
                 insertContract(max, chkcontract14.Text);
             }
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Company Contract Created Succesfully');", true);
+
+            Response.Redirect("CreateContract");
         }
 
         public void insertContract(int contractid, string contract)
@@ -242,7 +244,7 @@ namespace Automation_V1
 
         protected void btnSendVideoLink_Click(object sender, EventArgs e)
         {
-            string str = "select * from tblcontract where companyid = '" + ddlCompany.SelectedItem.Value + "'";
+            string str = "select * from tblcontract where companyid = '" + ddlCompany.SelectedItem.Value + "' and contractid = '" + txtContactName.SelectedItem.Value + "'";
             DataSet ds = gen.Get_Recordset(str, "mst_group");
 
             if (ds.Tables[0].Rows.Count != 0)
@@ -274,6 +276,10 @@ namespace Automation_V1
                 Body = strBody;
 
                 string sendEmail = gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Document Upload Link Sent Succesfully');", true);
+
+                Response.Redirect("CreateContract");
 
             }
 
