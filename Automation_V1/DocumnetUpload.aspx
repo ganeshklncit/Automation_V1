@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DocumnetUpload.aspx.cs" Inherits="Automation_V1.DocumentUpload" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="DocumnetUpload.aspx.cs" Inherits="Automation_V1.DocumentUpload" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -37,7 +37,7 @@
 
         <br />
 
-            <div class="col-md-12">
+        <div class="col-md-12">
         <asp:GridView ID="GridView1" runat="server"
             AutoGenerateColumns="false" CssClass="table table-bordered table-hover table-responsive" HeaderStyle-BackColor="#c15c2d" HeaderStyle-BorderColor="#C15C2D" HeaderStyle-ForeColor="White">
             <Columns>
@@ -52,7 +52,6 @@
         </asp:GridView>
 
     </div>
-
 
          <div class="col-md-6">
          <asp:Button ID="btnAgree" runat="server" Text="Click to upload Video" CssClass="btn custom-btn" Enabled="false"  OnClick="btnAgree_Click"  />

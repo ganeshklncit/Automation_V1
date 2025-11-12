@@ -122,7 +122,52 @@ namespace Automation_V1
             str = "update tblcontractdocument set updatedat = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',status = '2' where contractid = '" + ddlContract.SelectedItem.Value + "'";
             result = gen.insert_value(str);
 
+            // send approval email
+            try
+            {
+                SendApprovalEmail();
+            }
+            catch
+            {
+                // swallow or log as appropriate; do not break user flow
+            }
+
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Document Verified Succesfully');", true);
+        }
+
+        private void SendApprovalEmail()
+        {
+            string userEmail = gen.senderEmail; // fallback recipient
+            string userCC = "";
+            string userBCC = "";
+            string strSubject = "";
+            string Body = "";
+
+            // try to get contact name and email from tblcontract
+            string str = "select contactname, emailid from tblcontract where contractid = '" + ddlContract.SelectedItem.Value + "'";
+            DataSet ds = gen.Get_Recordset(str, "tblcontract");
+
+            string contactName = "";
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                
+                contactName = ds.Tables[0].Rows[0][0].ToString();
+                var contactEmailCol = ds.Tables[0].Rows[0][1].ToString();
+                if (!string.IsNullOrEmpty(contactEmailCol))
+                {
+                    userEmail = contactEmailCol;
+                }
+            }
+
+            strSubject = "Document Approved for Contract " + ddlContract.SelectedItem.Value;
+            Body = "<body>";
+            Body += "<p>Hi " + contactName + ",</p>";
+            Body += "<p>Your document for contract <strong>" + HttpUtility.HtmlEncode(ddlContract.SelectedItem.Value) + "</strong> has been approved on " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ".</p>";
+            Body += "<p>Regards,<br/>" + HttpUtility.HtmlEncode(gen.senderEmail) + "</p>";
+            Body += "</body>";
+
+            // call shared email helper
+            gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
         }
 
 

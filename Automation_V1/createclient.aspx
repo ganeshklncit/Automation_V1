@@ -20,8 +20,8 @@
        <asp:TextBox ID="txtcompanyname" runat="server" class="form-control"></asp:TextBox>    
   </div>
   <div class="col-auto">
-        <asp:Button ID="btnSubmit" class="btn custom-btn" runat="server" Text="Login" 
-                             Width="82px" OnClick="btnSubmit_Click" />
+        <asp:Button ID="btnSubmit" class="btn custom-btn" runat="server" Text="Create Company" 
+                             OnClick="btnSubmit_Click" />
   </div>
 </div>
  
@@ -33,21 +33,18 @@
 
 
 
-       <asp:GridView ID="GridView1" runat="server"   
-            AutoGenerateColumns="false" CssClass="table table-bordered table-hover table-responsive" HeaderStyle-BackColor="#c15c2d" HeaderStyle-BorderColor="#C15C2D" HeaderStyle-ForeColor="White"> 
-            <Columns>  
-                <asp:BoundField DataField="CompanyName" HeaderText="Company Name" />  
-                <asp:TemplateField ItemStyle-HorizontalAlign="Center">  
-                    <ItemTemplate>  
-                        <asp:LinkButton ID="lnkDownload" runat="server" Text="Edit"  
-                            CommandArgument='<%# Eval("id") %>'></asp:LinkButton>  
-                    </ItemTemplate>  
-                </asp:TemplateField>  
-            </Columns>  
-
-        
-
-        </asp:GridView>  
+      <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand"
+     AutoGenerateColumns="false" CssClass="table table-bordered table-hover table-responsive" HeaderStyle-BackColor="#c15c2d" HeaderStyle-BorderColor="#C15C2D" HeaderStyle-ForeColor="White"> 
+     <Columns>  
+         <asp:BoundField DataField="CompanyName" HeaderText="Company Name" />  
+         <asp:TemplateField ItemStyle-HorizontalAlign="Center">  
+             <ItemTemplate>  
+                 <asp:LinkButton ID="lnkDownload" runat="server" Text="Edit" CommandName="EditCompany"
+                     CommandArgument='<%# Eval("id") %>'></asp:LinkButton>  
+             </ItemTemplate>  
+         </asp:TemplateField>  
+     </Columns>  
+ </asp:GridView>  
 
 
 
