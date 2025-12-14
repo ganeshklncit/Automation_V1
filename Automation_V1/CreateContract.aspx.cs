@@ -109,6 +109,8 @@ namespace Automation_V1
 
         public void insertContract(int contractid, string contract)
         {
+
+
             string getscalar = gen.scalar_result("select max(contractdetailsid) from tblcontractdetails");
             int max = gen.checkmax(getscalar);
             string str = "insert into tblcontractdetails values (" + max + "," + contractid + ",'" + contract + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','1')";
@@ -122,108 +124,207 @@ namespace Automation_V1
 
             strSubject = "Request you to accept the Contract " + contract + "";
 
-            string strBody = "";
-            strBody = strBody + "<body >";
+            // Build a full HTML body with an explicit anchor tag so Outlook renders a clickable link
+            var sb = new System.Text.StringBuilder();
+            sb.Append("<!doctype html><html><head><meta charset='utf-8'></head><body>");
+            sb.Append("<table style='display: block; font-family: sans-serif;'>");
+            sb.Append("<tbody>");
+            sb.Append("<tr><td>Contract Created by Automation team, Please accept the contract by clicking the link below</td></tr>");
 
-            strBody = strBody + "<table style='display: block; font-family: sans-serif;'>";
-            strBody = strBody + "<tbody>";
-            strBody = strBody + "<tr>";
-            strBody = strBody + "<td>Contract Created by Automation team, Please accept the contract by click the below url</td>";
-            strBody = strBody + "</tr>";
+            string url = null;
             if (contract == "CIC accounts")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/CIC-accounts?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/CIC-accounts?cid={max}";
             }
-            if (contract == "Corporation Tax")
+            else if (contract == "Corporation Tax")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/corporation_tax?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/corporation_tax?cid={max}";
             }
-            if (contract == "General Terms and Conditions All Clients")
+            else if (contract == "General Terms and Conditions All Clients")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/general_terms_conditions_all_clients?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/general_terms_conditions_all_clients?cid={max}";
             }
-            if (contract == "LLP Accounts")
+            else if (contract == "LLP Accounts")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/LLP_accounts?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/LLP_accounts?cid={max}";
             }
-            if (contract == "Partnership accounts preperation")
+            else if (contract == "Partnership accounts preperation")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/partnership_accounts_preparation?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/partnership_accounts_preparation?cid={max}";
             }
-            if (contract == "Payroll Services")
+            else if (contract == "Payroll Services")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/payroll_services?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/payroll_services?cid={max}";
             }
-            if (contract == "SCIO Charity accounts")
+            else if (contract == "SCIO Charity accounts")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/SCIO_charity_accounts?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/SCIO_charity_accounts?cid={max}";
             }
-            if (contract == "Sole Trader accounts Preperation")
+            else if (contract == "Sole Trader accounts Preperation")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/sole_trader_accounts_preparation?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/sole_trader_accounts_preparation?cid={max}";
             }
-            if (contract == "Unicorporated Charity accounts receipts Payments")
+            else if (contract == "Unicorporated Charity accounts receipts Payments")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/unicorporated_charity_accounts_receipts_payments?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/unicorporated_charity_accounts_receipts_payments?cid={max}";
             }
-            if (contract == "Unicorporated Charity accounts accruals")
+            else if (contract == "Unicorporated Charity accounts accruals")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/unincorporated_charity_accounts_accruals?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/unincorporated_charity_accounts_accruals?cid={max}";
             }
-            if (contract == "unregistred club accounts")
+            else if (contract == "unregistred club accounts")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/unregistered_club_account?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/unregistered_club_account?cid={max}";
             }
-            if (contract == "VAT")
+            else if (contract == "VAT")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/vat?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/vat?cid={max}";
             }
-            if (contract == "Limited Company Charity accouts")
+            else if (contract == "Limited Company Charity accouts")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/limited_company_charity_accounts?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/limited_company_charity_accounts?cid={max}";
             }
-            if (contract == "Limited Company Statuory accounts preperation")
+            else if (contract == "Limited Company Statuory accounts preperation")
             {
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/limited_company_statutory_accounts_preparation?cid=" + max + "</td>";
-                strBody = strBody + "</tr>";
+                url = $"https://www.thymepm.tax/limited_company_statutory_accounts_preparation?cid={max}";
             }
 
-            strBody = strBody + "</tbody>";
-            strBody = strBody + " </table>";
+            if (!string.IsNullOrEmpty(url))
+            {
+                // provide both anchor and visible URL so different mail clients render it reliably
+                string encodedUrl = HttpUtility.HtmlEncode(url);
+                sb.Append("<tr>");
+                sb.AppendFormat("<td><a href=\"{0}\" target=\"_blank\" rel=\"noopener\">Click here to accept the Contract</a></td>", encodedUrl);
+                sb.Append("</tr>");
+                sb.Append("<tr>");
+                sb.AppendFormat("<td><small>{0}</small></td>", encodedUrl);
+                sb.Append("</tr>");
+            }
 
-            Body = strBody;
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</body></html>");
+
+            Body = sb.ToString();
 
             string sendEmail = gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
 
+
+            //string getscalar = gen.scalar_result("select max(contractdetailsid) from tblcontractdetails");
+            //int max = gen.checkmax(getscalar);
+            //string str = "insert into tblcontractdetails values (" + max + "," + contractid + ",'" + contract + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','1')";
+            //int result = gen.insert_value(str);
+
+            //string userEmail = txtemail.Text;
+            //string userCC = "";
+            //string userBCC = "";
+            //string strSubject = "";
+            //string Body = "";
+
+            //strSubject = "Request you to accept the Contract " + contract + "";
+
+            //string strBody = "";
+            //strBody = strBody + "<body >";
+
+            //strBody = strBody + "<table style='display: block; font-family: sans-serif;'>";
+            //strBody = strBody + "<tbody>";
+            //strBody = strBody + "<tr>";
+            //strBody = strBody + "<td>Contract Created by Automation team, Please accept the contract by click the below url</td>";
+            //strBody = strBody + "</tr>";
+            //if (contract == "CIC accounts")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/CIC-accounts?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "Corporation Tax")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/corporation_tax?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "General Terms and Conditions All Clients")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/general_terms_conditions_all_clients?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "LLP Accounts")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/LLP_accounts?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "Partnership accounts preperation")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/partnership_accounts_preparation?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "Payroll Services")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/payroll_services?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "SCIO Charity accounts")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/SCIO_charity_accounts?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "Sole Trader accounts Preperation")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/sole_trader_accounts_preparation?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "Unicorporated Charity accounts receipts Payments")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/unicorporated_charity_accounts_receipts_payments?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "Unicorporated Charity accounts accruals")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/unincorporated_charity_accounts_accruals?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "unregistred club accounts")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/unregistered_club_account?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "VAT")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/vat?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "Limited Company Charity accouts")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/limited_company_charity_accounts?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+            //if (contract == "Limited Company Statuory accounts preperation")
+            //{
+            //    strBody = strBody + "<tr>";
+            //    strBody = strBody + "<td>https://www.thymepm.tax/limited_company_statutory_accounts_preparation?cid=" + max + "</td>";
+            //    strBody = strBody + "</tr>";
+            //}
+
+            //strBody = strBody + "</tbody>";
+            //strBody = strBody + " </table>";
+
+            //Body = strBody;
+
+            //string sendEmail = gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
+
         }
-        
+
         protected void ddlCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
            loadContract();
@@ -252,28 +353,32 @@ namespace Automation_V1
                 string userEmail = txtemail.Text;
                 string userCC = "";
                 string userBCC = "";
-                string strSubject = "";
+                string strSubject = "Request you to upload the Validation Document for Company " + ddlCompany.SelectedItem.Text;
                 string Body = "";
 
-                strSubject = "Request you to upload the Validation Document for Company" + ddlCompany.SelectedItem.Text + "";
+                // Build a full HTML body with an explicit anchor tag so modern Outlook renders a clickable link
+                var sb = new System.Text.StringBuilder();
+                sb.Append("<!doctype html><html><head><meta charset='utf-8'></head><body>");
+                sb.Append("<table style='display: block; font-family: sans-serif;'>");
+                sb.Append("<tbody>");
+                sb.Append("<tr><td>Contract Created by Automation team, Please upload the validation document using the link below</td></tr>");
 
-                string strBody = "";
-                strBody = strBody + "<body >";
+                string docId = ds.Tables[0].Rows[0][0].ToString();
+                string url = "https://www.thymepm.tax/DocumnetUpload?cid=" + HttpUtility.UrlEncode(docId);
+                string encodedUrl = HttpUtility.HtmlEncode(url);
 
-                strBody = strBody + "<table style='display: block; font-family: sans-serif;'>";
-                strBody = strBody + "<tbody>";
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>Contract Created by Automation team, Please accept the contract by click the below url</td>";
-                strBody = strBody + "</tr>";
+                sb.Append("<tr>");
+                sb.AppendFormat("<td><a href=\"{0}\" target=\"_blank\" rel=\"noopener\">Upload validation document</a></td>", encodedUrl);
+                sb.Append("</tr>");
+                sb.Append("<tr>");
+                sb.AppendFormat("<td><small>{0}</small></td>", encodedUrl);
+                sb.Append("</tr>");
 
-                strBody = strBody + "<tr>";
-                strBody = strBody + "<td>https://www.thymepm.tax/DocumnetUpload?cid=" + ds.Tables[0].Rows[0][0].ToString() + "</td>";
-                strBody = strBody + "</tr>";
+                sb.Append("</tbody>");
+                sb.Append("</table>");
+                sb.Append("</body></html>");
 
-                strBody = strBody + "</tbody>";
-                strBody = strBody + " </table>";
-
-                Body = strBody;
+                Body = sb.ToString();
 
                 string sendEmail = gen.DoSendEmail(userEmail, userCC, userBCC, strSubject, Body);
 
